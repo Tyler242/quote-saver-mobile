@@ -19,7 +19,6 @@ I used Android Studio and the Kotlin programming language to build this app.
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Searching by word will order search results by frequency of word appearance.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
 * Add an individual quote view that displays the quote, source, date added, keywords, and number of times viewed.
