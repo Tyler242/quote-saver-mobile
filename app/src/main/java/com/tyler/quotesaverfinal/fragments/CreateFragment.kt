@@ -37,8 +37,8 @@ class CreateFragment : Fragment() {
         val etKeywords = view.findViewById<EditText>(R.id.etKeywords)
         val createButton = view.findViewById<Button>(R.id.createButton)
 
-//        populate the fields with the current quote data if we are editing an
-//        existing quote
+//        populate the fields with the current quote data
+//        if we are editing an existing quote
         if (quoteToEdit != null) {
             val edit = "Update Quote"
             etQuoteText.setText(quoteToEdit!!.text)

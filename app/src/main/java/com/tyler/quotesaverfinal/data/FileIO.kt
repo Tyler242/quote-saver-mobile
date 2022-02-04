@@ -8,11 +8,14 @@ import com.tyler.quotesaverfinal.models.Quote
 import java.time.LocalDate
 
 class FileIO {
+//    this shouldn't ever change. This is the file where the quote data is stored.
     private val fileName = "quotes.txt"
 
     fun writeFile(context: Context, quotes: List<Quote>) {
+//        configure the quote objects to be written correctly
         val textToWrite = quoteToText(quotes)
 
+//        write the quote objects to the file
         context.openFileOutput(fileName, Context.MODE_PRIVATE).use {
             output -> output.write(textToWrite.toByteArray())
         }
@@ -37,12 +40,13 @@ class FileIO {
     fun readFile(context: Context): MutableList<Quote> {
         var text: String
 
+//        read the text from the file
         context.openFileInput(fileName).use { stream ->
             text = stream.bufferedReader().use {
                 it.readText()
             }
         }
-
+//        translate the text received to quote objects.
         val list = text.split("{")
 
         val listQuoteBlocks = list.filter { it.isNotEmpty() }
@@ -56,7 +60,6 @@ class FileIO {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun configQuotes(quoteBlocks: String): Quote {
-        """Create each quote object from each quote entry"""
 
 //        create the quote attributes for each quote
         val keyValues = quoteBlocks.split('/')

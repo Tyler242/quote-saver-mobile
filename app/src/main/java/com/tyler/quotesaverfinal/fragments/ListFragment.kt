@@ -14,17 +14,19 @@ import com.tyler.quotesaverfinal.data.FileIO
 import com.tyler.quotesaverfinal.data.Sort
 import com.tyler.quotesaverfinal.models.Quote
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ListFragment(
 ) : Fragment() {
+
+//    create a sort object for searching
     var sortService = Sort()
+
+//    if we have a quote to delete, this will the quote object to delete
     var quoteToDelete: Quote? = null
+
+//    if we are searching, this will be the type of search being performed
     var searchParam: String? = null
+
+//    this is the value we are searching for.
     lateinit var searchString: String
 
     override fun onCreateView(
@@ -39,10 +41,12 @@ class ListFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+//        read the quotes from the file
         val quotes = FileIO().readFile(requireContext())
         var sortedQuotes: MutableList<Quote>
 
+//        sort the quotes, if no searchParam was set then
+//        we will set the sortedQuotes to the entire list of quotes
         sortedQuotes = when (searchParam) {
             "Word" -> {
                 sortService.sortWord(searchString, quotes)
@@ -56,13 +60,14 @@ class ListFragment(
             else -> quotes
         }
 
-//        delete the quote and reload the file
+//        delete the quote, write the quotes, and read the file back in
         if (quoteToDelete != null) {
             quotes.remove(quoteToDelete)
             FileIO().writeFile(requireContext(), quotes)
             sortedQuotes = FileIO().readFile(requireContext())
         }
 
+//        set up the list view with the views for each quote
         val recyclerView = requireView().findViewById<RecyclerView>(R.id.list_quotes)
         recyclerView.adapter = ItemAdapter(sortedQuotes)
     }

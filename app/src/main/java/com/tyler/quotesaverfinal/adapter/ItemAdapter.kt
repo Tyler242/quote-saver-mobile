@@ -17,7 +17,7 @@ class ItemAdapter(
 //    set the list of quotes
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 //        create a view object for each quote in our list
         val tvQuoteText: TextView = view.findViewById(R.id.quote_text)
         val tvQuoteSource: TextView = view.findViewById(R.id.quote_source)
@@ -42,7 +42,7 @@ class ItemAdapter(
         holder.tvQuoteSource.text = item.source
         holder.tvQuoteKeywords.text = item.keywords.toString()
 
-//        edit button
+//        edit button listener
         holder.editButton.setOnClickListener {
             val createFragment = CreateFragment()
             createFragment.quoteToEdit = item
@@ -51,7 +51,7 @@ class ItemAdapter(
             manager.commit()
         }
 
-//        delete button
+//        delete button listener
         holder.deleteButton.setOnClickListener {
             val listFragment = ListFragment()
             listFragment.quoteToDelete = item

@@ -29,39 +29,56 @@ class DashboardFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+//        read the quotes in
         val quotes = FileIO().readFile(requireContext())
-        val lastQuote = quotes.size - 1
+
+//        get the index of the final quote for the recently added view
+        val lastQuoteIndex = quotes.size - 1
+
+//        views for the recently added quote
         val rQuoteText = view.findViewById<TextView>(R.id.tvQuote)
         val rQuoteSource = view.findViewById<TextView>(R.id.tvSource)
         val rQuoteKeywords = view.findViewById<TextView>(R.id.tvKeywords)
 
-        rQuoteText.text = quotes[lastQuote].text
-        rQuoteSource.text = quotes[lastQuote].source
-        rQuoteKeywords.text = quotes[lastQuote].keywords.toString()
+//        set the content of the recently added quote views
+        rQuoteText.text = quotes[lastQuoteIndex].text
+        rQuoteSource.text = quotes[lastQuoteIndex].source
+        rQuoteKeywords.text = quotes[lastQuoteIndex].keywords.toString()
 
-//        get the search buttons1
+//        get the search buttons
         val btnSearchWord = view.findViewById<Button>(R.id.wordSearch)
         val btnSearchSource = view.findViewById<Button>(R.id.sourceSearch)
         val btnSearchKeyword = view.findViewById<Button>(R.id.keywordSearch)
 
+//        search fragment for switching in the event listeners
         val searchFragment = SearchFragment()
 
-//        on click listeners
         btnSearchWord.setOnClickListener {
+//            search by word listener
+
+//            set the hint in the EditText box in the search Fragment
             searchFragment.hint = "Word"
+//            replace the active fragment
             val manager = parentFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, searchFragment)
             manager.commit()
         }
         btnSearchSource.setOnClickListener {
+//            search by source listener
+
+//            set the hint in the EditText box in the searchFragment
             searchFragment.hint = "Source"
+//            replace the active fragment
             val manager = parentFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, searchFragment)
             manager.commit()
         }
         btnSearchKeyword.setOnClickListener {
+//            search by keyword listener
+
+//            set the hint in the EditText box in the searchFragment
             searchFragment.hint = "Keyword"
+//            replace the active fragment
             val manager = parentFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, searchFragment)
             manager.commit()
