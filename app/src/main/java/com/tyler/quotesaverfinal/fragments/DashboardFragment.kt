@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
+import com.tyler.quotesaverfinal.MainActivity
 import com.tyler.quotesaverfinal.R
 import com.tyler.quotesaverfinal.adapter.ItemAdapter
 import com.tyler.quotesaverfinal.data.FileIO
@@ -59,9 +60,8 @@ class DashboardFragment : Fragment() {
 //            set the hint in the EditText box in the search Fragment
             searchFragment.hint = "Word"
 //            replace the active fragment
-            val manager = parentFragmentManager.beginTransaction()
-            manager.replace(R.id.fragment_container, searchFragment)
-            manager.commit()
+            fragmentSwitcher(searchFragment)
+
         }
         btnSearchSource.setOnClickListener {
 //            search by source listener
@@ -69,9 +69,8 @@ class DashboardFragment : Fragment() {
 //            set the hint in the EditText box in the searchFragment
             searchFragment.hint = "Source"
 //            replace the active fragment
-            val manager = parentFragmentManager.beginTransaction()
-            manager.replace(R.id.fragment_container, searchFragment)
-            manager.commit()
+            fragmentSwitcher(searchFragment)
+
         }
         btnSearchKeyword.setOnClickListener {
 //            search by keyword listener
@@ -79,9 +78,14 @@ class DashboardFragment : Fragment() {
 //            set the hint in the EditText box in the searchFragment
             searchFragment.hint = "Keyword"
 //            replace the active fragment
-            val manager = parentFragmentManager.beginTransaction()
-            manager.replace(R.id.fragment_container, searchFragment)
-            manager.commit()
+            fragmentSwitcher(searchFragment)
         }
+    }
+
+    private fun fragmentSwitcher(fragment: Fragment) {
+//        switch the active fragment
+        val manager = parentFragmentManager.beginTransaction()
+        manager.replace(R.id.fragment_container, fragment)
+        manager.commit()
     }
 }

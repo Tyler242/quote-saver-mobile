@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+//    nav fragment manager
     private fun replaceFragment(fragment: Fragment) {
 //        replace the current fragment with the new one
         val transaction = supportFragmentManager.beginTransaction()
