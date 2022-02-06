@@ -4,7 +4,7 @@ Quote Saver is a mobile app I built to familiarize myself with Mobile App Develo
 
 The purpose of Quote Saver is to store quotes that are meaningful to you or you find enjoyable. It has built in functionalities that allow you to search for different quotes by word, source, and keywords that you have attached to the quotes. This allows the user to find quotes or sayings for specific situations with just a little effort.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/CEf7HeUk2HE)
 
 # Development Environment
 
