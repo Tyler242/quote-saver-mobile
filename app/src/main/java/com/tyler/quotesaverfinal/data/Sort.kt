@@ -30,10 +30,6 @@ class Sort {
     }
 
     private fun orderByFrequency(word: String, quotes: MutableList<Quote>): MutableList<Quote> {
-        /**
-         * get the frequency of the word in each quote and add it to a new list
-         * in the correct spot.
-         */
         val sortedQuotes: MutableList<Quote> = mutableListOf()
         val sortedQuotesGroup = quotes.groupBy { quote ->
             getFrequency(word, quote.text)
