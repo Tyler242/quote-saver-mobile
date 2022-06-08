@@ -43,7 +43,7 @@ class CreateFragment : Fragment() {
             val edit = "Update Quote"
             etQuoteText.setText(quoteToEdit!!.text)
             etSource.setText(quoteToEdit!!.source)
-            etKeywords.setText(quoteToEdit!!.keywords.toString().split('[')[1].split(']')[0])
+            etKeywords.setText(quoteToEdit!!.keywords.toString().split('[')[1].split(']')[0].replace(",", ", "))
             createButton.text = edit
         }
 
@@ -55,7 +55,7 @@ class CreateFragment : Fragment() {
         createButton.setOnClickListener {
 
 //            get the new data and create a new quote object
-            val keywords = etKeywords.text.toString().split(",")
+            val keywords = etKeywords.text.toString().replace(" ", "").split(",")
             val newQuote = Quote(
                 etQuoteText.text.toString(),
                 etSource.text.toString(),
