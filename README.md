@@ -19,7 +19,7 @@ I used Android Studio and the Kotlin programming language to build this app.
 
 # Future Work
 
-* Searching by word will order search results by frequency of word appearance.
+* Add an individual quote view that displays the quote, source, date added, keywords.
+* Change data storage to JSON instead of custom syntax.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
-* Add an individual quote view that displays the quote, source, date added, keywords, and number of times viewed.
-* Implement a SQL database for storing quotes instead of using local storage.
+* Change from local storage to using a cloud database that returns JSON objects.
