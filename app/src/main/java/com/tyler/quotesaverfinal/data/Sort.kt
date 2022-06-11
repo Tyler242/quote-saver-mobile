@@ -1,5 +1,6 @@
 package com.tyler.quotesaverfinal.data
 
+import android.util.Log
 import com.tyler.quotesaverfinal.models.Quote
 
 class Sort {
@@ -35,8 +36,10 @@ class Sort {
             getFrequency(word, quote.text)
         }
         val listKeys = sortedQuotesGroup.keys.toMutableList()
+
         listKeys.sort()
         listKeys.reverse()
+
         for (key in listKeys) {
             sortedQuotesGroup[key]?.let { sortedQuotes.addAll(it) }
         }
@@ -48,8 +51,8 @@ class Sort {
         var count = 0
 
         wordList.forEach {
-            it.replace("\\p{Punct}".toRegex(), "")
-            if (it == word) count += 1
+            val newWord = it.replace("\\p{Punct}".toRegex(), "")
+            if (newWord == word) count += 1
         }
         return count
     }
