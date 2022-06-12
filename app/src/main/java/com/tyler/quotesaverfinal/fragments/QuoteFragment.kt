@@ -52,7 +52,11 @@ class QuoteFragment : Fragment() {
         }
 
         deleteButton.setOnClickListener{
-            Log.i("MainActivity", "quote deleted")
+            val listFragment = ListFragment()
+            listFragment.quoteToDelete = quote
+            val manager = parentFragmentManager.beginTransaction()
+            manager.replace(R.id.fragment_container, listFragment)
+            manager.commit()
         }
     }
 }
