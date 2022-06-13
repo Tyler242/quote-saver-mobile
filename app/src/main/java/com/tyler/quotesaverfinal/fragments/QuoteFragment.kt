@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import com.tyler.quotesaverfinal.R
 import com.tyler.quotesaverfinal.models.Quote
@@ -33,8 +34,8 @@ class QuoteFragment : Fragment() {
         val dateView = view.findViewById<TextView>(R.id.quoteDate)
 
 //        get the button objects
-        val editButton = view.findViewById<Button>(R.id.editButton)
-        val deleteButton = view.findViewById<Button>(R.id.deleteButton)
+        val editButton = view.findViewById<ImageButton>(R.id.editButton)
+        val deleteButton = view.findViewById<ImageButton>(R.id.deleteButton)
 
 //        set text for text objects
         textView.text = quote.text

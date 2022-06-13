@@ -74,24 +74,28 @@
 
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/editButton"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="75dp"
         android:layout_marginBottom="100dp"
-        android:text="Edit Quote"
+        android:contentDescription="Edit Quote"
+        android:src="@drawable/ic_create"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/circle_button"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/deleteButton"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="75dp"
         android:layout_marginBottom="100dp"
-        android:text="Delete Quote"
+        android:contentDescription="Delete Quote"
+        android:src="@drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/circle_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
