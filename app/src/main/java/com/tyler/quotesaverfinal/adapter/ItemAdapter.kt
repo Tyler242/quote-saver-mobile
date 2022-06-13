@@ -42,7 +42,7 @@ class ItemAdapter(
         val item = dataset[position]
         holder.tvQuoteText.text = item.text
         holder.tvQuoteSource.text = item.source
-        holder.tvQuoteKeywords.text = item.keywords.toString()
+        holder.tvQuoteKeywords.text = item.keywords.toString().split("[")[1].split("]")[0]
 
 //        edit button listener
         holder.editButton.setOnClickListener {

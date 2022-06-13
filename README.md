@@ -23,3 +23,7 @@ I used Android Studio and the Kotlin programming language to build this app.
 * Change data storage to JSON instead of custom syntax.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
 * Change from local storage to using a cloud database that returns JSON objects.
+* Add advanced search features to allow for more complicated searching.
+* Update design to be responsive for horizontal viewing.
+* Update buttons from to text to icons and make quote container be button for viewing.
+* Save and show frequent searches.

@@ -7,83 +7,91 @@
     tools:layout_editor_absoluteX="-8dp"
     tools:layout_editor_absoluteY="182dp">
 
-    <TextView
-        android:id="@+id/quoteKeywords"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="40dp"
-        android:text="Keywords"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/quote_container"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/editButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteSource" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/quoteText"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/text_container"
-        android:padding="5dp"
-        android:text="Text"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/quoteText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:padding="5dp"
+            android:text="Text"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/quoteSource"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteText"
-        android:text="Source" />
+        <TextView
+            android:id="@+id/quoteSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:text="Source"
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/quoteDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="40dp"
-        android:text="Created On"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteKeywords" />
+        <TextView
+            android:id="@+id/quoteKeywords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:text="Keywords"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/quoteDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="30dp"
+            android:text="Created On"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/editButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginBottom="100dp"
         android:text="Edit Quote"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteDate" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="100dp"
         android:text="Delete Quote"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quoteDate" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

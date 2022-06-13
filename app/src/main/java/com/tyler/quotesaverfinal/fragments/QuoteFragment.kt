@@ -39,7 +39,7 @@ class QuoteFragment : Fragment() {
 //        set text for text objects
         textView.text = quote.text
         sourceView.text = quote.source
-        keywordView.text = quote.keywords.toString()
+        keywordView.text = quote.keywords.toString().split("[")[1].split("]")[0]
         dateView.text = quote.date.toString()
 
 //        button listeners
