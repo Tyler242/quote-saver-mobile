@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.tyler.quotesaverfinal.R
 import com.tyler.quotesaverfinal.fragments.CreateFragment
 import com.tyler.quotesaverfinal.fragments.ListFragment
+import com.tyler.quotesaverfinal.fragments.QuoteFragment
 import com.tyler.quotesaverfinal.models.Quote
 
 class ItemAdapter(
@@ -24,6 +25,7 @@ class ItemAdapter(
         val tvQuoteKeywords: TextView = view.findViewById(R.id.quote_keywords)
         val editButton: Button = view.findViewById(R.id.edit_quote)
         val deleteButton: Button = view.findViewById(R.id.delete_quote)
+        val viewButton: Button = view.findViewById(R.id.viewQuoteButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -40,7 +42,7 @@ class ItemAdapter(
         val item = dataset[position]
         holder.tvQuoteText.text = item.text
         holder.tvQuoteSource.text = item.source
-        holder.tvQuoteKeywords.text = item.keywords.toString()
+        holder.tvQuoteKeywords.text = item.keywords.toString().split("[")[1].split("]")[0]
 
 //        edit button listener
         holder.editButton.setOnClickListener {
@@ -57,6 +59,15 @@ class ItemAdapter(
             listFragment.quoteToDelete = item
             val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, listFragment)
+            manager.commit()
+        }
+
+//        view button listener
+        holder.viewButton.setOnClickListener{
+            val quoteFragment = QuoteFragment()
+            quoteFragment.quote = item
+            val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
+            manager.replace(R.id.fragment_container, quoteFragment)
             manager.commit()
         }
     }
