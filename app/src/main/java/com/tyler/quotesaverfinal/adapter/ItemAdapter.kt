@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -23,9 +24,9 @@ class ItemAdapter(
         val tvQuoteText: TextView = view.findViewById(R.id.quote_text)
         val tvQuoteSource: TextView = view.findViewById(R.id.quote_source)
         val tvQuoteKeywords: TextView = view.findViewById(R.id.quote_keywords)
-        val editButton: Button = view.findViewById(R.id.edit_quote)
-        val deleteButton: Button = view.findViewById(R.id.delete_quote)
-        val viewButton: Button = view.findViewById(R.id.viewQuoteButton)
+        val editButton: ImageButton = view.findViewById(R.id.edit_quote)
+        val deleteButton: ImageButton = view.findViewById(R.id.delete_quote)
+        val viewButton: ImageButton = view.findViewById(R.id.viewQuoteButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {

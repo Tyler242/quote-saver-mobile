@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import com.tyler.quotesaverfinal.R
 import com.tyler.quotesaverfinal.data.FileIO
@@ -35,7 +36,7 @@ class CreateFragment : Fragment() {
         val etQuoteText = view.findViewById<EditText>(R.id.etQuoteText)
         val etSource = view.findViewById<EditText>(R.id.etSource)
         val etKeywords = view.findViewById<EditText>(R.id.etKeywords)
-        val createButton = view.findViewById<Button>(R.id.createButton)
+        val createButton = view.findViewById<ImageButton>(R.id.createButton)
 
 //        populate the fields with the current quote data
 //        if we are editing an existing quote
@@ -44,7 +45,8 @@ class CreateFragment : Fragment() {
             etQuoteText.setText(quoteToEdit!!.text)
             etSource.setText(quoteToEdit!!.source)
             etKeywords.setText(quoteToEdit!!.keywords.toString().split('[')[1].split(']')[0].replace(",", ", "))
-            createButton.text = edit
+//            createButton.setBackgroundResource(R.drawable.circle_button)
+            createButton.setImageResource(R.drawable.ic_create)
         }
 
 //      read the file in

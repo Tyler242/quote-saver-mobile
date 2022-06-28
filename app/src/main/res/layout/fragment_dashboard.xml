@@ -37,35 +37,40 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuote"
         tools:text="TextView" />
 
-    <Button
+    <ImageButton
         android:id="@+id/wordSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Search by Word"
+        android:background="@drawable/circle_button"
+        android:src="@drawable/ic_word"
+        android:layout_marginBottom="215dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvKeywords" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/sourceSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Search by Source"
+        android:layout_marginBottom="115dp"
+        android:layout_marginEnd="150dp"
+        android:background="@drawable/circle_button"
+        android:src="@drawable/ic_source"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wordSearch" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/keywordSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Search by Keyword"
+        android:layout_marginBottom="115dp"
+        android:layout_marginStart="150dp"
+        android:background="@drawable/circle_button"
+        android:src="@drawable/ic_tag"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sourceSearch" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvKeywords"

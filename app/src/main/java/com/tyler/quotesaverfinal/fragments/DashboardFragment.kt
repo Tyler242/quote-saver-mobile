@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
@@ -47,9 +48,9 @@ class DashboardFragment : Fragment() {
         rQuoteKeywords.text = quotes[lastQuoteIndex].keywords.toString()
 
 //        get the search buttons
-        val btnSearchWord = view.findViewById<Button>(R.id.wordSearch)
-        val btnSearchSource = view.findViewById<Button>(R.id.sourceSearch)
-        val btnSearchKeyword = view.findViewById<Button>(R.id.keywordSearch)
+        val btnSearchWord = view.findViewById<ImageButton>(R.id.wordSearch)
+        val btnSearchSource = view.findViewById<ImageButton>(R.id.sourceSearch)
+        val btnSearchKeyword = view.findViewById<ImageButton>(R.id.keywordSearch)
 
 //        search fragment for switching in the event listeners
         val searchFragment = SearchFragment()

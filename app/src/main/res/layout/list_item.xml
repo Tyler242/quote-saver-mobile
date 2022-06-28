@@ -50,25 +50,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <Button
+        <ImageButton
             android:id="@+id/edit_quote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:text="Edit" />
+            android:src="@drawable/ic_create"
+            android:background="@drawable/circle_button"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/delete_quote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginEnd="10dp"
-            android:text="Delete" />
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/circle_button"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/viewQuoteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_view"
+            android:background="@drawable/circle_button"/>
     </LinearLayout>
 
 
