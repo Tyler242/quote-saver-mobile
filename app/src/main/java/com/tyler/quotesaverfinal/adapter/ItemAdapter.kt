@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,7 @@ class ItemAdapter(
         val tvQuoteKeywords: TextView = view.findViewById(R.id.quote_keywords)
         val editButton: ImageButton = view.findViewById(R.id.edit_quote)
         val deleteButton: ImageButton = view.findViewById(R.id.delete_quote)
-        val viewButton: ImageButton = view.findViewById(R.id.viewQuoteButton)
+        val layout: LinearLayout = view.findViewById(R.id.linearLayout2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -45,6 +46,15 @@ class ItemAdapter(
         holder.tvQuoteSource.text = item.source
         holder.tvQuoteKeywords.text = item.keywords.toString().split("[")[1].split("]")[0]
 
+//        layout listener
+        holder.layout.setOnClickListener {
+            val quoteFragment = QuoteFragment()
+            quoteFragment.quote = item
+            val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
+            manager.replace(R.id.fragment_container, quoteFragment)
+            manager.commit()
+        }
+
 //        edit button listener
         holder.editButton.setOnClickListener {
             val createFragment = CreateFragment()
@@ -60,15 +70,6 @@ class ItemAdapter(
             listFragment.quoteToDelete = item
             val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, listFragment)
-            manager.commit()
-        }
-
-//        view button listener
-        holder.viewButton.setOnClickListener{
-            val quoteFragment = QuoteFragment()
-            quoteFragment.quote = item
-            val manager = (holder.itemView.context as FragmentActivity).supportFragmentManager.beginTransaction()
-            manager.replace(R.id.fragment_container, quoteFragment)
             manager.commit()
         }
     }
