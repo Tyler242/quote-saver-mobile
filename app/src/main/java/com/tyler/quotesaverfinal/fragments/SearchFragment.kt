@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import com.tyler.quotesaverfinal.R
 
 class SearchFragment : Fragment() {
@@ -25,7 +26,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 //        get the view objects
-        val searchBtn = view.findViewById<Button>(R.id.search)
+        val searchBtn = view.findViewById<ImageButton>(R.id.search)
         val etSearchKey = view.findViewById<EditText>(R.id.search_key)
 
 //        set the EditText hint to the type of search being performed
