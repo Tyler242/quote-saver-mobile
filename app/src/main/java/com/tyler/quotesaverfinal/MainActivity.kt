@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.tyler.quotesaverfinal.data.FileIO
 import com.tyler.quotesaverfinal.fragments.CreateFragment
 import com.tyler.quotesaverfinal.fragments.DashboardFragment
 import com.tyler.quotesaverfinal.fragments.ListFragment
+import com.tyler.quotesaverfinal.models.Quote
 import kotlinx.android.synthetic.main.activity_main.*
+import java.time.LocalDate
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        write the new file
+//        val file = FileIO()
+//        val randomQuote = Quote("Hello there!", "Obi-Wan-Kenobi", LocalDate.now(), mutableListOf("Star Wars", "Meme"))
+//        file.writeFile(this, listOf(randomQuote))
 
 //        set up default screen
         replaceFragment(dashboardFragment)
