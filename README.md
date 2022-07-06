@@ -17,13 +17,19 @@ I used Android Studio and the Kotlin programming language to build this app.
 * [Tutorial for Bottom Navigation](https://www.youtube.com/watch?v=v8MbOjBCu0o&ab_channel=CodeWithMazn)
 * [Code Labs for Android](https://codelabs.developers.google.com/?cat=Android)
 
+# Recent Updates
+
+* June 10th 2022 - Updated the word search to sort the quotes by frequency. Quotes with more instances of the word will appear at the top and will continue in a descending order.
+* June 12th 2022 - Added an individual quote view that displays the quote, source, date added, and keywords. This view has buttons for editing and deleting the quote as well. This view can be accessed from the list view by selecting the text of the quote.
+* June 27th 2022 - Updated the styling of all buttons to be a light blue circle with an icon instead of a purple rectangle with text.
+* July 5th 2022 - Changed the quote storage type from txt to json to simplify CRUD operations and to prepare for api integration. You should not see any notable difference in the UI.
+
 # Future Work
 
-* Add an individual quote view that displays the quote, source, date added, keywords.
-* Change data storage to JSON instead of custom syntax.
+* Fix bug when there are no saved quotes.
+* Implement better quote manager.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
-* Change from local storage to using a cloud database that returns JSON objects.
+* Create tests and possibly test automation for UI and backend.
+* Change from local storage to using an API and cloud database combination that returns JSON objects.
 * Add advanced search features to allow for more complicated searching.
 * Update design to be responsive for horizontal viewing.
-* Update buttons from to text to icons and make quote container be button for viewing.
-* Save and show frequent searches.
