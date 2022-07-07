@@ -2,19 +2,14 @@ package com.tyler.quotesaverfinal.fragments
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.recyclerview.widget.RecyclerView
-import com.tyler.quotesaverfinal.MainActivity
 import com.tyler.quotesaverfinal.R
-import com.tyler.quotesaverfinal.adapter.ItemAdapter
 import com.tyler.quotesaverfinal.data.FileIO
 
 class DashboardFragment : Fragment() {
@@ -42,10 +37,15 @@ class DashboardFragment : Fragment() {
         val rQuoteSource = view.findViewById<TextView>(R.id.tvSource)
         val rQuoteKeywords = view.findViewById<TextView>(R.id.tvKeywords)
 
+        val defaultText = "Add a quote to get started!"
 //        set the content of the recently added quote views
-        rQuoteText.text = quotes[lastQuoteIndex].text
-        rQuoteSource.text = quotes[lastQuoteIndex].source
-        rQuoteKeywords.text = quotes[lastQuoteIndex].keywords.toString()
+        if (lastQuoteIndex >= 0) {
+            rQuoteText.text = quotes[lastQuoteIndex].text
+            rQuoteSource.text = quotes[lastQuoteIndex].source
+            rQuoteKeywords.text = quotes[lastQuoteIndex].keywords.toString().replace("[", "").replace("]", "")
+        } else {
+            rQuoteText.text = defaultText
+        }
 
 //        get the search buttons
         val btnSearchWord = view.findViewById<ImageButton>(R.id.wordSearch)
