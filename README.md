@@ -27,9 +27,8 @@ I used Android Studio and the Kotlin programming language to build this app.
 
 # Future Work
 
-* Implement better quote manager.
+* Fix the created date variable for the quotes.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
-* Create tests and possibly test automation for UI and backend.
 * Change from local storage to using an API and cloud database combination that returns JSON objects.
 * Add advanced search features to allow for more complicated searching.
 * Update design to be responsive for horizontal viewing.
