@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        write the new file
-//        val file = FileIO()
-//        val randomQuote = Quote("Hello there!", "Obi-Wan-Kenobi", LocalDate.now(), mutableListOf("Star Wars", "Meme"))
-//        file.writeFile(this, listOf(randomQuote))
+        val file = FileIO()
+        val randomQuote = Quote("Hello there!", "Obi-Wan-Kenobi", LocalDate.now().toString(), mutableListOf("Star Wars", "Meme"))
+        file.writeFile(this, listOf(randomQuote))
 
 //        set up default screen
         replaceFragment(dashboardFragment)

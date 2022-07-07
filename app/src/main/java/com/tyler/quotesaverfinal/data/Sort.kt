@@ -1,6 +1,5 @@
 package com.tyler.quotesaverfinal.data
 
-import android.util.Log
 import com.tyler.quotesaverfinal.models.Quote
 
 class Sort {
