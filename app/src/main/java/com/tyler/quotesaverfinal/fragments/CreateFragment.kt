@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.annotation.RequiresApi
@@ -41,7 +40,6 @@ class CreateFragment : Fragment() {
 //        populate the fields with the current quote data
 //        if we are editing an existing quote
         if (quoteToEdit != null) {
-            val edit = "Update Quote"
             etQuoteText.setText(quoteToEdit!!.text)
             etSource.setText(quoteToEdit!!.source)
             etKeywords.setText(quoteToEdit!!.keywords.toString().split('[')[1].split(']')[0].replace(",", ", "))
@@ -57,11 +55,11 @@ class CreateFragment : Fragment() {
         createButton.setOnClickListener {
 
 //            get the new data and create a new quote object
-            val keywords = etKeywords.text.toString().replace(" ", "").split(",")
+            val keywords = etKeywords.text.toString().replace(", ", ",").split(",")
             val newQuote = Quote(
                 etQuoteText.text.toString(),
                 etSource.text.toString(),
-                LocalDate.now(),
+                LocalDate.now().toString(),
                 keywords
             )
 
@@ -80,7 +78,6 @@ class CreateFragment : Fragment() {
             val manager = parentFragmentManager.beginTransaction()
             manager.replace(R.id.fragment_container, listFragment)
             manager.commit()
-
         }
     }
 }

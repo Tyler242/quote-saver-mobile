@@ -23,11 +23,10 @@ I used Android Studio and the Kotlin programming language to build this app.
 * June 12th 2022 - Added an individual quote view that displays the quote, source, date added, and keywords. This view has buttons for editing and deleting the quote as well. This view can be accessed from the list view by selecting the text of the quote.
 * June 27th 2022 - Updated the styling of all buttons to be a light blue circle with an icon instead of a purple rectangle with text.
 * July 5th 2022 - Changed the quote storage type from txt to json to simplify CRUD operations and to prepare for api integration. You should not see any notable difference in the UI.
-* July 6th 2022 - Fixed a bug that causes a crash when there are no quotes and the user navigates to the dashboard.
+* July 6th 2022 - Fixed two bugs. App will no longer crash when navigating to the dashboard with zero quotes saved. Modified date of the quote will now be saved and read correctly.
 
 # Future Work
 
-* Fix the created date variable for the quotes.
 * Add a carousel on the dashboard that scrolls through recently added, edited, highest viewed.
 * Change from local storage to using an API and cloud database combination that returns JSON objects.
 * Add advanced search features to allow for more complicated searching.
